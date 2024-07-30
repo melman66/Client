@@ -124,12 +124,12 @@
 
 ##### public:
 
-```void connectingToServer(  const QString &strHost, const QString &port, const``` ```QString client_name) const```;
-```void disconnectingFromServer() const```;
-```bool sendMessageToServer(QString msg) const```;
-```bool getconnectedState() const``` - вызывают соответсвующие методы у объекта ```client_view_model```, возвращая его же значеня.
+```Q_INVOKABLE void connectingToServer(  const QString &strHost, const QString &port, const``` ```QString client_name) const```;
+```Q_INVOKABLE void disconnectingFromServer() const```;
+```Q_INVOKABLE bool sendMessageToServer(QString msg) const```;
+```Q_INVOKABLE QString getCurrentDateTime() const``` - взовращает текущие дату и время в формате строки.
 
-```QString getCurrentDateTime() const``` - взовращает текущие дату и время в формате строки.
+```bool getconnectedState() const``` - вызывают соответсвующие методы у объекта ```client_view_model```, возвращая его же значеня.
 
 ### Сигналы
 
