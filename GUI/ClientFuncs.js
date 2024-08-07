@@ -31,7 +31,7 @@ function sendMessageToServer(msg)
         if(client_view.sendMessageToServer(msg)){
             client_input_message.input_message_text.text = ""
             client_view.messageSended(client_view.getCurrentDateTime() + "\n"
-                                      + "me:\n"
+                                      + "Me:\n"
                                       + msg)
         }
     }

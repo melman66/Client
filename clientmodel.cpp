@@ -28,6 +28,8 @@ void ClientModel::connectingToServer(  const QString &strHost
 
 void ClientModel::disconnectingFromServer()
 {
+    name_approved = false;
+
     client_socket->disconnectFromHost();
     client_socket->disconnect();
 
@@ -92,6 +94,8 @@ void ClientModel::slotError(QAbstractSocket::SocketError err)
                          QString(client_socket->errorString())
                      );
 
+    name_approved = false;
+
     client_socket->disconnectFromHost();
     client_socket->disconnect();
 
@@ -128,7 +132,7 @@ void ClientModel::slotReadyRead()
         emit sendMsgToGUI(QString{
               QDate::currentDate().toString() + "   "
             + QTime::currentTime().toString() + "\n"
-            + "server:\n" + msg});
+            + "Server:\n" + msg});
 }
 
 
